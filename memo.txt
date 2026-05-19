@@ -1,0 +1,12 @@
+C:\Users\binxie\OneDrive - Deloitte (CN)\Documents\dev\redis 运行startup.bat
+C:\Program Files\PostgreSQL\18\bin 运行postgres.exe
+cd housing-price-api
+python main.py
+swagger地址：http://127.0.0.1:8000/docs
+cd estimator-backend
+python main.py
+cd market-backend
+mvn spring-boot:run
+cd nextjs-portal
+npm install
+npm run dev

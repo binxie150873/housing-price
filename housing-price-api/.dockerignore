@@ -1,0 +1,9 @@
+notebooks/
+tests/
+*.pyc
+__pycache__/
+.git/
+.gitignore
+*.md
+htmlcov/
+.pytest_cache/

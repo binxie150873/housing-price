@@ -1,0 +1,78 @@
+{
+  "model_name": "HousingPriceHedonicModel",
+  "model_version": "2.1.0",
+  "model_type": "HedonicLinearRegression",
+  "training_date": "2026-05-18",
+  "dataset_info": {
+    "total_samples": 50,
+    "features": 7,
+    "train_test_split": "80/20"
+  },
+  "performance_metrics": {
+    "r2_score": 0.993863,
+    "rmse": 5860.09,
+    "mae": 5189.71,
+    "mse": 34340669.56
+  },
+  "feature_importance": [
+    {
+      "feature": "school_rating",
+      "importance": 0.41963
+    },
+    {
+      "feature": "lot_size",
+      "importance": 0.263196
+    },
+    {
+      "feature": "bedrooms",
+      "importance": 0.148475
+    },
+    {
+      "feature": "bathrooms",
+      "importance": 0.062663
+    },
+    {
+      "feature": "square_footage",
+      "importance": 0.035346
+    },
+    {
+      "feature": "year_built",
+      "importance": 0.035346
+    },
+    {
+      "feature": "distance_to_city_center",
+      "importance": 0.035346
+    }
+  ],
+  "model_parameters": {
+    "algorithm": "Log-Linear OLS with Sign Constraints (Hedonic Pricing Model)",
+    "intercept": 10.897436,
+    "coefficients": {
+      "square_footage": 0.01,
+      "bedrooms": 0.042006,
+      "bathrooms": 0.017729,
+      "year_built": -0.01,
+      "lot_size": 0.074463,
+      "distance_to_city_center": -0.01,
+      "school_rating": 0.118722
+    },
+    "feature_scales": {
+      "square_footage": 100.0,
+      "bedrooms": 1.0,
+      "bathrooms": 1.0,
+      "year_built": 100.0,
+      "lot_size": 1000.0,
+      "distance_to_city_center": 1.0,
+      "school_rating": 1.0
+    },
+    "sign_constraints": {
+      "square_footage": 1,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "year_built": -1,
+      "lot_size": 1,
+      "distance_to_city_center": -1,
+      "school_rating": 1
+    }
+  }
+}

@@ -1,0 +1,45 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /api/v1/market
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  cache:
+    type: caffeine
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+
+ml-service:
+  base-url: http://localhost:8000
+  timeout: 5000
+  retry:
+    max-attempts: 3
+    initial-delay: 1000
+    multiplier: 2
+
+market:
+  cache:
+    ttl-seconds: 300
+  export:
+    max-rows: 50000
+    max-records-per-request: 10000
